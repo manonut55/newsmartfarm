@@ -1,6 +1,6 @@
 <template>
   <div class="FertilityData">
-    <!-- <v-layout row>
+    <v-layout row>
       <div>
    <v-data-table
     :items="newdata"
@@ -21,10 +21,11 @@
     </template>
   </v-data-table>
     </div>
-    </v-layout> -->
+    </v-layout>
+    {{ferData[6]}}
       <v-layout row>
         <div>
-          <canvas id="myLineChart2" style="width:520px; height : 450px; position :absolute;top:2px; left:1%;"></canvas>
+          <canvas id="myLineChartfer" width="400" height="400"></canvas>
         </div>
     </v-layout>
   </div>
@@ -56,10 +57,10 @@ export default {
   },
   mounted: function () {
     var vm = this
-    vm.$bindAsObject('dataGraph', db.ref('DataSensors').child('History').limitToLast(5), null, () => {
+    vm.$bindAsObject('dataGraph', db.ref('DataSensors/History').limitToLast(7), null, () => {
       let newdata = []
-      delete this.dataSensors['.key']
-      newdata = Object.values(this.dataSensors)
+      delete this.dataGraph['.key']
+      newdata = Object.values(this.dataGraph)
       console.log(this.dateData)
       for (let index in newdata) {
         this.ferData[index] = newdata[index].Fertility
@@ -69,7 +70,6 @@ export default {
     })
     vm.$bindAsObject('dataSensors', db.ref('DataSensors').child('History'), null, () => {
       delete this.dataSensors['.key']
-      // newdata = Object.values(this.dataSensors)
       for (let index in this.dataSensors) {
         console.log(index)
         this.newdata.push(
@@ -82,36 +82,41 @@ export default {
         )
       }
     })
-    var ctx2 = document.getElementById('myLineChart2').getContext('2d')
-    var myLineChart2 = new Chart(ctx2, {
-      type: 'line',
-      data: {
-        labels: this.dateData,
-        datasets: [{
-          label: 'ความชื้นในอากาศ',
-          data: this.ferData,
-          backgroundColor: [
-            'rgba(217, 237, 247, 0.4)'
-          ],
-          borderColor: [
-            'rgba(38,144,255,1)'
-          ],
-          borderWidth: 1
-        }]
-      },
-      options: {
-        scales: {
-          yAxes: [{
-            stacked: true
-          }]
-        }
-      }
-    })
-    console.log(myLineChart2)
-  },
-  watch: {
   },
   methods: {
+    chart () {
+      var ctxfer = document.getElementById('myLineChartfer').getContext('2d')
+      var myLineChartfer = new Chart(ctxfer, {
+        type: 'line',
+        data: {
+          labels: this.dateData,
+          datasets: [{
+            label: 'ค่าNPK',
+            data: this.ferData,
+            backgroundColor: [
+              'rgba(217, 237, 247, 0.4)'
+            ],
+            borderColor: [
+              'rgba(38,144,255,1)'
+            ],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            yAxes: [{
+              stacked: true
+            }]
+          }
+        }
+      })
+      console.log(myLineChartfer)
+    }
+  },
+  watch: {
+    dataGraph () {
+      this.chart()
+    }
   }
 }
 </script>
