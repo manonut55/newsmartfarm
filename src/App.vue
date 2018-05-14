@@ -19,13 +19,23 @@
               <v-list-tile-title>หน้าหลัก</v-list-tile-title>
             </v-list-tile-content>
           </v-list-tile>
+          <router-link to= "SetTime" class="btnlink">
+          <v-list-tile @click="" >
+            <v-list-tile-action>
+              <v-icon color="indigo">mail</v-icon>
+            </v-list-tile-action>
+            <v-list-tile-content>
+              <v-list-tile-title>ตั้งค่าเวลารดน้ำ</v-list-tile-title>
+            </v-list-tile-content>
+          </v-list-tile>
+             </router-link>
           <router-link to= "DataTable" class="btnlink">
           <v-list-tile href="/" >
             <v-list-tile-action>
               <v-icon color="indigo">mail</v-icon>
             </v-list-tile-action>
             <v-list-tile-content>
-              <v-list-tile-title>aliconnors@example.com</v-list-tile-title>
+              <v-list-tile-title>ตารางข้อมูล</v-list-tile-title>
             </v-list-tile-content>
           </v-list-tile>
           </router-link>
@@ -51,7 +61,7 @@
                 <v-list-tile-title>{{ item.title }}</v-list-tile-title>
               </v-list-tile-content>
             </v-list-tile>
-            <v-list-tile v-for="subItem in item.items" :key="subItem.title" @click="">
+            <v-list-tile v-for="subItem in item.items" :key="subItem.title" :to="subItem.href">
               <v-list-tile-content>
                 <v-list-tile-title>{{ subItem.title }}</v-list-tile-title>
               </v-list-tile-content>
@@ -98,15 +108,13 @@ export default {
       items: [
         {
           action: 'restaurant',
-          title: 'Dining',
+          title: 'กราฟแสดงข้อมูล',
           active: true,
           items: [
-              { title: 'Breakfast & brunch' },
-              { title: 'New American' },
-              { title: 'Sushi' },
-              { ring: 'FertilityGraph' },
-              { ring: 'FertilityGraph' },
-              { ring: 'FertilityGraph' }
+              { href: '/TemperatureData', title: 'ความชื่นในอากาศ' },
+              { href: '/HumidityData', title: 'อุณหภูมิในอากาศ' },
+              { href: '/SoilData', title: 'ความชื่นในดิน' },
+              { href: '/FertilityData', title: 'ค่าสารอาหารในดิน' }
           ]
         }
       ]

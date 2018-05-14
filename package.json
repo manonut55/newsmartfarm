@@ -13,6 +13,7 @@
   "dependencies": {
     "chart.js": "^2.7.2",
     "firebase": "^4.12.1",
+    "moment-timezone": "^0.5.17",
     "vue": "^2.5.16",
     "vue-router": "^3.0.1",
     "vuefire": "^1.4.5",

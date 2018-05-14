@@ -1,12 +1,22 @@
 <template>
   <div class="HumidityChart">
-   <v-layout>
+  <v-layout>
     <v-flex xs12 sm6 offset-sm3>
       <v-card>
-        <v-card-title primary-title>
+        <v-card-media
+          class="white--text"
+          height="300px">
+          <v-container fill-height fluid>
+            <v-layout fill-height>
+              <v-flex xs12 align-end flexbox>
+                 <div><canvas id="humidityChart" width="200"height="200"></canvas></div>
+              </v-flex>
+            </v-layout>
+          </v-container>
+        </v-card-media>
+        <v-card-title>
           <div>
-            <h3 class="headline mb-0">ความชื้นในอากาศ</h3>
-            <div><canvas id="humidityChart" width="400" height="400"></canvas></div>
+            <h3 class="headline mb-0">ความชื้นในอากาศ</h3><br>
           </div>
         </v-card-title>
         <v-card-actions>

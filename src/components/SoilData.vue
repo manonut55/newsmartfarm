@@ -1,6 +1,6 @@
 <template>
-  <div class="FertilityData">
-    <v-layout row>
+  <div class="SoilData">
+    <v-layout row  >
       <div>
    <v-data-table
     :items="newdata"
@@ -17,15 +17,14 @@
     <template slot="items" slot-scope="props" value="key">
       <td>{{ props.item.Date }}</td>
       <td class="text-xs-right">{{ props.item.Time }}</td>
-      <td class="text-xs-right">{{ props.item.Fertility }}</td>
+      <td class="text-xs-right">{{ props.item.Soil }}</td>
     </template>
   </v-data-table>
     </div>
     </v-layout>
-    {{ferData[6]}}
       <v-layout row>
         <div>
-          <canvas id="myLineChartfer" width="400" height="400"></canvas>
+          <canvas id="myLineChartsoil" width="400" height="400"></canvas>
         </div>
     </v-layout>
   </div>
@@ -34,13 +33,13 @@
 import Chart from 'Chart.js'
 import { db } from './firebase.js'
 export default {
-  name: 'FertilityData',
+  name: 'SoilData',
   data () {
     return {
       dataSensors: '',
       dataGraph: '',
       newdata: [],
-      ferData: [],
+      soilData: [],
       timeData: [],
       dateData: [],
       headers: [
@@ -51,7 +50,7 @@ export default {
           value: 'Date'
         },
         { text: 'เวลา', value: 'Time' },
-        { text: 'ค่าสารอาหารในดิน', value: 'Fertility' }
+        { text: 'ความชื่นในดิน', value: 'Soil' }
       ]
     }
   },
@@ -63,7 +62,7 @@ export default {
       newdata = Object.values(this.dataGraph)
       console.log(this.dateData)
       for (let index in newdata) {
-        this.ferData[index] = newdata[index].Fertility
+        this.soilData[index] = newdata[index].Soil
         this.timeData[index] = newdata[index].Time
         this.dateData[index] = newdata[index].Date
       }
@@ -77,7 +76,7 @@ export default {
             value: false,
             Date: this.dataSensors[index].Date,
             Time: this.dataSensors[index].Time,
-            Fertility: this.dataSensors[index].Fertility
+            Soil: this.dataSensors[index].Soil
           }
         )
       }
@@ -85,14 +84,14 @@ export default {
   },
   methods: {
     chart () {
-      var ctxfer = document.getElementById('myLineChartfer').getContext('2d')
-      var myLineChartfer = new Chart(ctxfer, {
+      var ctxsoil = document.getElementById('myLineChartsoil').getContext('2d')
+      var myLineChartsoil = new Chart(ctxsoil, {
         type: 'line',
         data: {
           labels: this.dateData,
           datasets: [{
             label: 'ค่าNPK',
-            data: this.ferData,
+            data: this.soilData,
             backgroundColor: [
               'rgba(217, 237, 247, 0.4)'
             ],
@@ -110,7 +109,7 @@ export default {
           }
         }
       })
-      console.log(myLineChartfer)
+      console.log(myLineChartsoil)
     }
   },
   watch: {
