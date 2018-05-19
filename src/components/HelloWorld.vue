@@ -1,20 +1,19 @@
-<template>
-<v-container  grid-list-md >
+<template >
+<v-container  grid-list-md>
       <v-layout row wrap>
-          <v-flex xs3>
+          <v-flex md3>
             <TemperatureChart></TemperatureChart>
           </v-flex>
-          <v-flex xs3>
+          <v-flex md3>
             <HumidityChart></HumidityChart>
           </v-flex>
-          <v-flex xs3 >
+          <v-flex md3 >
             <FertilityChart></FertilityChart>
           </v-flex>
-          <v-flex xs3>
+          <v-flex md3>
             <SoilChart></SoilChart>
         </v-flex>
     </v-layout>
-    
   </v-container>
 </template>
 
@@ -55,4 +54,5 @@ li {
 a {
   color: #42b983;
 }
+
 </style>

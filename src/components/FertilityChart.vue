@@ -2,32 +2,36 @@
   <div class="FertilityChart">
   <v-layout>
     <v-flex>
-      <v-card>
-        <v-card-media>
-          <v-layout row wrap>  
+      <v-card >
+        <v-card-text class="text-md-center">   
+        <v-card-title class="orange white--text">
+          <div> 
+            <h3 class="headline mb-0">FertilityChart</h3><br>
+            </div>
+          </v-card-title >
+            </v-card-text>
+            <v-layout justify-center>      
+        <v-card-media >
           <v-progress-circular
           :size="120"
           :width="15"
           :rotate="-90"
           :value="useData[0]"
-          color="primary"
+          color="orange"
         >
-          {{ useData[0] }}
+          <h1> {{ useData[0] }} </h1>
         </v-progress-circular>  
         <!-- <div><canvas id="LineChartfer" height="250" width="300"></canvas></div> -->
-          </v-layout>
         </v-card-media>
-        <v-card-title primary-title>
-          <div>
-             <h3 class="headline mb-0">FertilityChart</h3><br>
-          </div>
-        </v-card-title>
+        </v-layout>
+        <v-layout justify-center>  
         <v-card-actions>
-          <v-btn flat color="orange">Share</v-btn>
-          <v-btn flat color="orange">Explore</v-btn>
+          <v-btn small color="orange white--text">Share</v-btn>
+          <v-btn small color="orange white--text">Explore</v-btn>
         </v-card-actions>
+        </v-layout>
         <div style="flex: 1 1 auto;"/>
-      </v-card>
+              </v-card>
     </v-flex>
   </v-layout>
     </div>
@@ -106,15 +110,5 @@ export default {
 }
 </script>
 <style>
-#fertilityChart{
-  width: 150px;
-  height: 150px;
-  position: relative;
-  top: 50px;
-}
-#LineChartfer{
-   position: relative;
-   
-}
 </style>
 

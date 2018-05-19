@@ -2,27 +2,33 @@
   <div class="HumidityChart">
   <v-layout>
     <v-flex >
-      <v-card>
+      <v-card >
+         <v-card-text class="text-md-center">
+         <v-card-title class="teal white--text">
+          <div>
+             <h3 class="headline mb-0">ความชื้นในอากาศ</h3><br>
+          </div>
+        </v-card-title>
+        </v-card-text>
+         <v-layout justify-center>      
         <v-card-media>
                    <v-progress-circular
           :size="120"
           :width="15"
           :rotate="-90"
           :value="useData[0]"
-          color="primary"
+          color="teal"
         >
-          {{ useData[0] }}
+          <h1>{{ useData[0] }}</h1>
         </v-progress-circular>
         </v-card-media>
-        <v-card-title primary-title>
-          <div>
-             <h3 class="headline mb-0">ความชื้นในอากาศ</h3><br>
-          </div>
-        </v-card-title>
-        <v-card-actions>
-          <v-btn flat color="orange">Share</v-btn>
-          <v-btn flat color="orange">Explore</v-btn>
+         </v-layout>
+         <v-layout justify-center>
+               <v-card-actions>
+          <v-btn small color="teal white--text">Share</v-btn>
+          <v-btn small color="teal white--text" >Explore</v-btn>
         </v-card-actions>
+         </v-layout>
       </v-card>
     </v-flex>
   </v-layout>

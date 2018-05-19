@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app class="grey lighten-2">
     <v-navigation-drawer
       persistent
       :mini-variant="miniVariant"
@@ -13,7 +13,7 @@
       <v-list>
         <v-list-tile href="/" >
             <v-list-tile-action>
-              <v-icon x-large color="indigo">home</v-icon>
+             <i class="material-icons">home</i>
             </v-list-tile-action>
             <v-list-tile-content>
               <v-list-tile-title>หน้าหลัก</v-list-tile-title>
@@ -22,7 +22,7 @@
           <router-link to= "SetTime" class="btnlink">
           <v-list-tile @click="" >
             <v-list-tile-action>
-              <v-icon color="indigo">mail</v-icon>
+              <i class="material-icons">schedule</i>
             </v-list-tile-action>
             <v-list-tile-content>
               <v-list-tile-title>ตั้งค่าเวลารดน้ำ</v-list-tile-title>
@@ -32,7 +32,8 @@
           <router-link to= "DataTable" class="btnlink">
           <v-list-tile href="/" >
             <v-list-tile-action>
-              <v-icon color="indigo">mail</v-icon>
+              <i class="material-icons">table_chart</i>
+              <!-- <v-icon color="indigo">mail</v-icon> -->
             </v-list-tile-action>
             <v-list-tile-content>
               <v-list-tile-title>ตารางข้อมูล</v-list-tile-title>
@@ -42,14 +43,14 @@
         <router-link to= "FertilityData" class="btnlink">
           <v-list-tile @click="" >
             <v-list-tile-action>
-              <v-icon color="indigo">mail</v-icon>
+              <i class="material-icons">spa</i>
             </v-list-tile-action>
             <v-list-tile-content>
               <v-list-tile-title>ค่าNPK<br>FertilityData</v-list-tile-title>
             </v-list-tile-content>
           </v-list-tile>
              </router-link>
-          <v-list-group
+              <v-list-group
             v-model="item.active"
             v-for="item in items"
             :key="item.title"
@@ -82,7 +83,7 @@
           <v-spacer></v-spacer>
       <v-toolbar-side-icon 
       @click.stop="drawer = !drawer"
-      class="title amber--text "></v-toolbar-side-icon>
+      class="title white--text "></v-toolbar-side-icon>
     </v-toolbar>
       <v-content>
       <router-view/>

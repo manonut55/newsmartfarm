@@ -9,7 +9,7 @@
           :width="15"
           :rotate="-90"
           :value="useData[0]"
-          color="primary"
+          color="red"
         >
           {{ useData[0] }}
         </v-progress-circular>        </v-card-media>
