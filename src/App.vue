@@ -84,9 +84,9 @@
       @click.stop="drawer = !drawer"
       class="title amber--text "></v-toolbar-side-icon>
     </v-toolbar>
-    <v-content>
+      <v-content>
       <router-view/>
-    </v-content>
+      </v-content>
     <v-footer :fixed="fixed" app>
       <span>&copy; 2017</span>
     </v-footer>

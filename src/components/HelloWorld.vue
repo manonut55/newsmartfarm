@@ -1,32 +1,20 @@
 <template>
- <!-- src="/static/doc-images/cards/docks.jpg" -->
-<v-container grid-list-md text-xs-center>
-      <v-layout row>
-      <v-flex xs6 order-lg2>
-        <TemperatureChart></TemperatureChart>
-      </v-flex>
-      <v-flex xs6>
-        <HumidityChart></HumidityChart>
-      </v-flex>
-    </v-layout>
-      <v-layout row>
-      <v-flex xs6 order-lg2>
+<v-container  grid-list-md >
+      <v-layout row wrap>
+          <v-flex xs3>
+            <TemperatureChart></TemperatureChart>
+          </v-flex>
+          <v-flex xs3>
+            <HumidityChart></HumidityChart>
+          </v-flex>
+          <v-flex xs3 >
             <FertilityChart></FertilityChart>
-      </v-flex>
-      <v-flex xs6>
+          </v-flex>
+          <v-flex xs3>
             <SoilChart></SoilChart>
-      </v-flex>
+        </v-flex>
     </v-layout>
-      <v-layout row>
-      <v-flex xs6 order-lg2>
-            <PhChart></PhChart>
-      </v-flex>
-      <v-flex xs6>
-        <v-card>
-          <v-card-text>#6</v-card-text>
-        </v-card>
-      </v-flex>
-    </v-layout>
+    
   </v-container>
 </template>
 

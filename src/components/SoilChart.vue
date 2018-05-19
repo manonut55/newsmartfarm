@@ -1,22 +1,21 @@
 <template>
   <div class="SoilChart">
-  <v-layout>
-    <v-flex xs12 sm6 offset-sm3>
+   <v-layout>
+    <v-flex >
       <v-card>
-        <v-card-media
-          class="white--text"
-          height="300px">
-          <v-container fill-height fluid>
-            <v-layout fill-height>
-              <v-flex xs12 align-end flexbox>
-                 <div><canvas id="soilChart" width="200"height="200"></canvas></div>
-              </v-flex>
-            </v-layout>
-          </v-container>
-        </v-card-media>
-        <v-card-title>
+        <v-card-media>
+          <v-progress-circular
+          :size="120"
+          :width="15"
+          :rotate="-90"
+          :value="useData[0]"
+          color="primary"
+        >
+          {{ useData[0] }}
+        </v-progress-circular>        </v-card-media>
+        <v-card-title primary-title>
           <div>
-            <h3 class="headline mb-0">ความชื้นในดิน</h3><br>
+             <h3 class="headline mb-0">ความชื้นในดิน</h3><br>
           </div>
         </v-card-title>
         <v-card-actions>
@@ -30,7 +29,7 @@
 </template>
 
 <script>
-import Chart from 'Chart.js'
+// import Chart from 'Chart.js'
 import { db } from './firebase.js'
 export default {
   name: 'SoilChart',
@@ -42,28 +41,6 @@ export default {
   },
   methods: {
     chart () {
-      var oilCanvass = document.getElementById('soilChart')
-      // Chart.defaults.global.defaultFontFamily = 'Lato'
-      // Chart.defaults.global.defaultFontSize = 18
-      var soilChart = new Chart(oilCanvass, {
-        type: 'doughnut',
-        data: {
-          labels: ['ความชื้นในดิน'],
-          datasets: [{
-            data: [this.useData[0], (100 - this.useData[0])],
-            backgroundColor: [
-              '#ff740a',
-              'white'],
-            borderColor: [
-              '#ff740a',
-              '#ff740a']
-          }]
-        },
-        options: {
-          events: ['onHover']
-        }
-      })
-      console.log(soilChart)
     }
   },
   mounted: function () {
