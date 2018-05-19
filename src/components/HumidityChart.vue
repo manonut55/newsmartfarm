@@ -2,25 +2,25 @@
   <div class="HumidityChart">
   <v-layout>
     <v-flex >
-      <v-card >
-         <v-card-text class="text-md-center">
+      <v-card color="grey lighten-5">
          <v-card-title class="teal white--text">
-          <div>
-             <h3 class="headline mb-0">ความชื้นในอากาศ</h3><br>
-          </div>
-        </v-card-title>
-        </v-card-text>
-         <v-layout justify-center>      
+            <v-card-text class="text-md-center">          
+              <h3 class="headline mb-0" ><i class="material-icons">wb_cloudy</i> ความชื้นในอากาศ</h3>
+            </v-card-text>
+          </v-card-title>
+        <v-layout justify-center>      
         <v-card-media>
-                   <v-progress-circular
-          :size="120"
-          :width="15"
-          :rotate="-90"
-          :value="useData[0]"
-          color="teal"
-        >
+          <v-container>
+          <v-progress-circular
+            :size="120"
+            :width="15"
+            :rotate="-90"
+            :value="useData[0]"
+            color="teal"
+          >
           <h1>{{ useData[0] }}</h1>
         </v-progress-circular>
+        </v-container>
         </v-card-media>
          </v-layout>
          <v-layout justify-center>
@@ -29,6 +29,7 @@
           <v-btn small color="teal white--text" >Explore</v-btn>
         </v-card-actions>
          </v-layout>
+         <br>
       </v-card>
     </v-flex>
   </v-layout>

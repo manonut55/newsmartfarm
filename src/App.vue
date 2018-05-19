@@ -1,16 +1,14 @@
 <template>
-  <v-app class="grey lighten-2">
-    <v-navigation-drawer
-      persistent
-      :mini-variant="miniVariant"
-      :clipped="clipped"
-      :right="right"
-      v-model="drawer"
-      enable-resize-watcher
+  <v-app class="grey darken-3" >
+    <v-navigation-drawer dark
+         clipped
       fixed
+      v-model="drawer"
       app
+      :right="right"
     >
       <v-list>
+        <router-link to= "HelloWorld" class="btnlink" >
         <v-list-tile href="/" >
             <v-list-tile-action>
              <i class="material-icons">home</i>
@@ -19,7 +17,8 @@
               <v-list-tile-title>หน้าหลัก</v-list-tile-title>
             </v-list-tile-content>
           </v-list-tile>
-          <router-link to= "SetTime" class="btnlink">
+            </router-link>
+          <router-link to= "SetTime" class="btnlink" >
           <v-list-tile @click="" >
             <v-list-tile-action>
               <i class="material-icons">schedule</i>
@@ -77,7 +76,7 @@
     <v-toolbar
       app
       :clipped-left="clipped"
-      color="grey darken-4"
+      color="red"
     >
     <v-toolbar-title  class="title white--text pl-2 pt-1.5" v-text="title" ></v-toolbar-title>
           <v-spacer></v-spacer>
@@ -138,4 +137,7 @@ export default {
     background-attachment: fixed;
     background-position: center ; 
 } */
+.btnlink{
+color: white;
+}
 </style>

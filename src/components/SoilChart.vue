@@ -2,16 +2,17 @@
   <div class="SoilChart">
    <v-layout>
     <v-flex >
-      <v-card>
-         <v-card-text class="text-md-center">
+      <v-card color="grey lighten-5">
         <v-card-title class="pink white--text">
+         <v-card-text class="text-md-center">
           <div>
-             <h3 class="headline mb-0">ความชื้นในดิน</h3><br>
+             <h2 class="headline mb-0">ความชื้นในดิน</h2>
           </div>
+          </v-card-text>
         </v-card-title>
-        </v-card-text>
          <v-layout justify-center>      
         <v-card-media>
+          <v-container>
           <v-progress-circular
           :size="120"
           :width="15"
@@ -21,6 +22,7 @@
         >
          <h1> {{ useData[0] }} </h1>
         </v-progress-circular>        
+          </v-container>
         </v-card-media>
          </v-layout>
          <v-layout justify-center>  
@@ -29,6 +31,7 @@
           <v-btn small color="pink white--text">Explore</v-btn>
         </v-card-actions>
          </v-layout>
+         <br>
       </v-card>
     </v-flex>
   </v-layout>

@@ -1,4 +1,5 @@
 <template >
+<v-app class="grey darken-3" >
 <v-container  grid-list-md>
       <v-layout row wrap>
           <v-flex md3>
@@ -15,6 +16,7 @@
         </v-flex>
     </v-layout>
   </v-container>
+</v-app>
 </template>
 
 <script>

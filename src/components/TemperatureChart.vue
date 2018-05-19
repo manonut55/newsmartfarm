@@ -2,16 +2,15 @@
   <div class="TemperatureChart">
   <v-layout >
     <v-flex >
-      <v-card  >
-        <v-card-text class="text-md-center">
+      <v-card color="grey lighten-5" >
         <v-card-title class="primary white--text">
-          <div>
-            <h3 class="headline mb-0">อุณหภูมิในอากาศ</h3><br>
-          </div>
-        </v-card-title>
-        </v-card-text>
+        <v-card-text class="text-md-center">
+          <h3 class="headline mb-0">อุณหภูมิในอากาศ</h3>
+         </v-card-text>
+         </v-card-title>
          <v-layout justify-center>      
         <v-card-media>
+            <v-container>
           <v-progress-circular
           :size="120"
           :width="15"
@@ -21,6 +20,7 @@
         >
           <h1>{{ useData[0] }}</h1>
         </v-progress-circular>
+         </v-container>
         </v-card-media>
          </v-layout>
          <v-layout justify-center>  
@@ -29,6 +29,7 @@
           <v-btn small color="primary white--text">Explore</v-btn>
         </v-card-actions>
          </v-layout>
+         <br>
       </v-card>
     </v-flex>
   </v-layout>

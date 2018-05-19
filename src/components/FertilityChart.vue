@@ -2,16 +2,15 @@
   <div class="FertilityChart">
   <v-layout>
     <v-flex>
-      <v-card >
-        <v-card-text class="text-md-center">   
+      <v-card color="grey lighten-5">   
         <v-card-title class="orange white--text">
-          <div> 
-            <h3 class="headline mb-0">FertilityChart</h3><br>
-            </div>
+        <v-card-text class="text-md-center">
+            <h3 class="headline mb-0">FertilityChart</h3>
+          </v-card-text>
           </v-card-title >
-            </v-card-text>
-            <v-layout justify-center>      
+          <v-layout justify-center>      
         <v-card-media >
+          <v-container>
           <v-progress-circular
           :size="120"
           :width="15"
@@ -22,6 +21,7 @@
           <h1> {{ useData[0] }} </h1>
         </v-progress-circular>  
         <!-- <div><canvas id="LineChartfer" height="250" width="300"></canvas></div> -->
+          </v-container>
         </v-card-media>
         </v-layout>
         <v-layout justify-center>  
@@ -31,7 +31,8 @@
         </v-card-actions>
         </v-layout>
         <div style="flex: 1 1 auto;"/>
-              </v-card>
+        <br>
+        </v-card>
     </v-flex>
   </v-layout>
     </div>
