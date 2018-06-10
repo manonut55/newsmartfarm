@@ -4,14 +4,12 @@
     <v-flex >
       <v-card color="grey lighten-5">
         <v-card-title class="pink white--text">
-         <v-card-text class="text-md-center">
           <div>
-             <h2 class="headline mb-0">ความชื้นในดิน</h2>
+             ความชื้นในดิน
           </div>
-          </v-card-text>
-        </v-card-title>
-         <v-layout justify-center>      
-        <v-card-media>
+      </v-card-title>
+     <v-layout justify-center>      
+      <v-card-media>
           <v-container>
           <v-progress-circular
           :size="120"
@@ -24,14 +22,12 @@
         </v-progress-circular>        
           </v-container>
         </v-card-media>
-         </v-layout>
-         <v-layout justify-center>  
-           <v-card-actions>
-          <v-btn small color="pink white--text">Share</v-btn>
-          <v-btn small color="pink white--text">Explore</v-btn>
-        </v-card-actions>
-         </v-layout>
-         <br>
+          </v-layout>
+      <v-card-title class="pink white--text">
+          <div>
+             ความชื้นในดิน
+          </div>
+        </v-card-title>
       </v-card>
     </v-flex>
   </v-layout>

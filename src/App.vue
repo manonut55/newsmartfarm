@@ -8,8 +8,8 @@
       :right="right"
     >
       <v-list>
-        <router-link to= "HelloWorld" class="btnlink" >
-        <v-list-tile href="/" >
+        <router-link to= "/" class="btnlink" >
+        <v-list-tile href="" >
             <v-list-tile-action>
              <i class="material-icons">home</i>
             </v-list-tile-action>

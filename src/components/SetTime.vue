@@ -37,8 +37,8 @@
                   <h3 class="headline mb-0" >เพิ่มเวลารดน้ำ</h3><br>
                   <v-text-field v-model="time" type="text" ></v-text-field><br>
                   <div v-for="time in settimejson">
-                    {{ time.H }}:
-                    {{ time.M }}
+                    {{ time.hs }}:
+                    {{ time.ms }}
                   </div>
                 </v-flex>
             </v-container>
@@ -107,11 +107,11 @@ export default {
     settime () {
       let data = {}
       if (this.time.substring(0, 1) === '0') {
-        data.H = this.time.substring(1, 2)
+        data.hs = this.time.substring(1, 2)
       } else {
-        data.H = this.time.substring(0, 2)
+        data.hs = this.time.substring(0, 2)
       }
-      data.M = this.time.substring(3)
+      data.ms = this.time.substring(3)
       this.settimejson.push(data)
       this.time = '00:00'
     },

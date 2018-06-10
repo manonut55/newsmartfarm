@@ -1,12 +1,10 @@
 <template>
   <div class="FertilityChart">
   <v-layout>
-    <v-flex>
+    <v-flex> 
       <v-card color="grey lighten-5">   
         <v-card-title class="orange white--text">
-        <v-card-text class="text-md-center">
-            <h3 class="headline mb-0">FertilityChart</h3>
-          </v-card-text>
+            ค่าสารอาหารในดิน
           </v-card-title >
           <v-layout justify-center>      
         <v-card-media >
@@ -24,21 +22,15 @@
           </v-container>
         </v-card-media>
         </v-layout>
-        <v-layout justify-center>  
-        <v-card-actions>
-          <v-btn small color="orange white--text">Share</v-btn>
-          <v-btn small color="orange white--text">Explore</v-btn>
-        </v-card-actions>
-        </v-layout>
-        <div style="flex: 1 1 auto;"/>
-        <br>
+         <v-card-title class="orange white--text">
+            ค่าสารอาหารในดิน
+          </v-card-title >
         </v-card>
     </v-flex>
   </v-layout>
     </div>
 </template>
 <script>
-import Chart from 'Chart.js'
 import { db } from './firebase.js'
 export default {
   name: 'FertilityChart',
@@ -46,70 +38,39 @@ export default {
     return {
       dataSensors: '',
       useData: '',
-      dataGraph: '',
       dateData: [],
       timeData: [],
       ferData: []
     }
   },
   methods: {
-    chart () {
-      var ctxfer = document.getElementById('LineChartfer').getContext('2d')
-      var LineChartfer = new Chart(ctxfer, {
-        type: 'line',
-        data: {
-          labels: this.dateData,
-          datasets: [{
-            label: 'ค่าNPK',
-            data: this.ferData,
-            backgroundColor: [
-              'rgba(217, 237, 247, 0.4)'
-            ],
-            borderColor: [
-              'rgba(38,144,255,1)'
-            ],
-            borderWidth: 1
-          }]
-        },
-        options: {
-          scales: {
-            yAxes: [{
-              stacked: true
-            }]
-          }
-        }
-      })
-      console.log(LineChartfer)
-    }
   },
   mounted: function () {
     var vm = this
     // vm.$bindAsObject('dataSensors', db.ref('DataSensors').child('History'), null)
     vm.$bindAsObject('dataSensors', db.ref('DataSensors/Fertility'), null)
-    vm.$bindAsObject('dataGraph', db.ref('DataSensors/History').limitToLast(7), null, () => {
-      let newdata = []
-      delete this.dataGraph['.key']
-      newdata = Object.values(this.dataGraph)
-      console.log(this.dateData)
-      for (let index in newdata) {
-        this.ferData[index] = newdata[index].Fertility
-        this.timeData[index] = newdata[index].Time
-        this.dateData[index] = newdata[index].Date
-      }
-    })
   },
   watch: {
     dataSensors () {
       delete this.dataSensors['.key']
       this.useData = Object.values(this.dataSensors)
-      this.chart()
-    },
-    dataGraph () {
-      this.chart()
     }
   }
 }
 </script>
-<style>
+<style scoped>
+h1, h2 {
+  font-weight: normal;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+a {
+  color: #42b983;
+}
 </style>
-

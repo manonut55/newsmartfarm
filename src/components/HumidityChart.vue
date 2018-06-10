@@ -4,11 +4,9 @@
     <v-flex >
       <v-card color="grey lighten-5">
          <v-card-title class="teal white--text">
-            <v-card-text class="text-md-center">          
-              <h3 class="headline mb-0" ><i class="material-icons">wb_cloudy</i> ความชื้นในอากาศ</h3>
-            </v-card-text>
+               ความชื้นในอากาศ
           </v-card-title>
-        <v-layout justify-center>      
+       <v-layout justify-center>      
         <v-card-media>
           <v-container>
           <v-progress-circular
@@ -22,14 +20,10 @@
         </v-progress-circular>
         </v-container>
         </v-card-media>
-         </v-layout>
-         <v-layout justify-center>
-               <v-card-actions>
-          <v-btn small color="teal white--text">Share</v-btn>
-          <v-btn small color="teal white--text" >Explore</v-btn>
-        </v-card-actions>
-         </v-layout>
-         <br>
+          </v-layout>
+         <v-card-title class="teal white--text">
+               ความชื้นในอากาศ
+          </v-card-title>
       </v-card>
     </v-flex>
   </v-layout>
@@ -67,9 +61,9 @@ export default {
 </script>
 
 <style scoped>
-h1, h2 {
+/* h1, h2 {
   font-weight: normal;
-}
+} */
 ul {
   list-style-type: none;
   padding: 0;

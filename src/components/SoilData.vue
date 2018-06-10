@@ -1,32 +1,36 @@
 <template>
   <div class="SoilData">
-    <v-layout row  >
-      <div>
-   <v-data-table
-    :items="newdata"
-    :headers="headers"
-    class="elevation-1"
-  >
-    <template slot="headerCell" slot-scope="props">
-      <v-tooltip bottom>
-        <span slot="activator">
-          {{ props.header.text }}
-        </span>
-      </v-tooltip>
-    </template>
-    <template slot="items" slot-scope="props" value="key">
-      <td>{{ props.item.Date }}</td>
-      <td class="text-xs-right">{{ props.item.Time }}</td>
-      <td class="text-xs-right">{{ props.item.Soil }}</td>
-    </template>
-  </v-data-table>
-    </div>
-    </v-layout>
-      <v-layout row>
-        <div>
-          <canvas id="myLineChartsoil" width="400" height="400"></canvas>
-        </div>
-    </v-layout>
+    <v-container fluid grid-list-md>
+    <v-layout row wrap>
+          <v-flex  xs12 md6>
+            <v-card>
+              <v-data-table
+                :items="newdata"
+                :headers="headers"
+                class="elevation-1"
+              >
+                <template slot="headerCell" slot-scope="props">
+                  <v-tooltip bottom>
+                    <span slot="activator">
+                      {{ props.header.text }}
+                    </span>
+                  </v-tooltip>
+                </template>
+                <template slot="items" slot-scope="props" value="key">
+                  <td>{{ props.item.Date }}</td>
+                  <td class="text-xs-right">{{ props.item.Time }}</td>
+                  <td class="text-xs-right">{{ props.item.Soil }}</td>
+                </template>
+              </v-data-table>
+          </v-card>
+          </v-flex>
+           <v-flex  xs12 md6>
+          <v-card> 
+          <canvas id="myLineChartsoil" width="200" height="107"></canvas>
+        </v-card>
+         </v-flex>
+        </v-layout>
+    </v-container>
   </div>
 </template>
 <script>

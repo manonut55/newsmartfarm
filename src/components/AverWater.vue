@@ -1,41 +1,15 @@
 <template>
-  <div class="FertilityData">
-    <v-container fluid grid-list-md>
-    <v-layout row wrap>
-          <v-flex  xs12 md6>
-              <v-data-table
-                :items="newdata"
-                :headers="headers"
-                class="elevation-1"
-              >
-                <template slot="headerCell" slot-scope="props">
-                  <v-tooltip bottom>
-                    <span slot="activator">
-                      {{ props.header.text }}
-                    </span>
-                  </v-tooltip>
-                </template>
-                <template slot="items" slot-scope="props" value="key">
-                  <td>{{ props.item.Date }}</td>
-                  <td class="text-xs-right">{{ props.item.Time }}</td>
-                  <td class="text-xs-right">{{ props.item.Fertility }}</td>
-                </template>
-              </v-data-table>
-          </v-flex>
-           <v-flex  xs12 md6>
+  <div class="AverWater">
           <v-card> 
           <canvas id="myLineChartfer" width="200" height="107"></canvas>
         </v-card>
-         </v-flex>
-        </v-layout>
-    </v-container>
   </div>
 </template>
 <script>
 import Chart from 'Chart.js'
 import { db } from './firebase.js'
 export default {
-  name: 'FertilityData',
+  name: 'AverWater',
   data () {
     return {
       dataSensors: '',
@@ -43,17 +17,7 @@ export default {
       newdata: [],
       ferData: [],
       timeData: [],
-      dateData: [],
-      headers: [
-        {
-          text: 'วัน/เดือน/ปี',
-          align: 'left',
-          sortable: false,
-          value: 'Date'
-        },
-        { text: 'เวลา', value: 'Time' },
-        { text: 'ค่าสารอาหารในดิน', value: 'Fertility' }
-      ]
+      dateData: []
     }
   },
   mounted: function () {

@@ -4,9 +4,7 @@
     <v-flex >
       <v-card color="grey lighten-5" >
         <v-card-title class="primary white--text">
-        <v-card-text class="text-md-center">
-          <h3 class="headline mb-0">อุณหภูมิในอากาศ</h3>
-         </v-card-text>
+          อุณหภูมิในอากาศ
          </v-card-title>
          <v-layout justify-center>      
         <v-card-media>
@@ -23,13 +21,9 @@
          </v-container>
         </v-card-media>
          </v-layout>
-         <v-layout justify-center>  
-        <v-card-actions>
-          <v-btn small color="primary white--text">Share</v-btn>
-          <v-btn small color="primary white--text">Explore</v-btn>
-        </v-card-actions>
-         </v-layout>
-         <br>
+            <v-card-title class="primary white--text">
+         อุณหภูมิในอากาศ
+         </v-card-title>
       </v-card>
     </v-flex>
   </v-layout>
